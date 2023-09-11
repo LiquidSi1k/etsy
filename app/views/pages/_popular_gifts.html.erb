@@ -4,7 +4,8 @@
     <% products.each do |product| %>
       <div class="bg-white mx-1 text-center card product-card">
         <a href="<%= product_path(product) %>">
-          <img class="" src="<%= cl_image_path(product.photo.key, :width => 400, :height => 400, :crop => "fill") if product.photo.key %>" alt="<%= product.name %>" class="product-image">
+          <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= product.name %>" style="height: 350px; width: 100%; object-fit: cover;" alt="<%= product.name %>">
+
         </a>
         <span><%= product.description %></span>
         <div class="mt-auto mb-3">

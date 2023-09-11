@@ -3,24 +3,34 @@
   <%# thumbnail product images on left panel %>
   <div class="thumbnail-product d-flex flex-column">
     <ul  data-controller="imgselect">
-     <li data-imgselect-target = "thumbnail" ><%= cl_image_tag @product.photo.key %></li>
-      <li data-imgselect-target = "thumbnail" ><%= cl_image_tag @product.photo.key%></li> <%# supposed to be other images when we add more photos %>
-       <li data-imgselect-target = "thumbnail" ><%= cl_image_tag @product.photo.key%></li>
-      <li data-imgselect-target = "thumbnail" ><%= cl_image_tag @product.photo.key%></li>
-     <li data-imgselect-target = "thumbnail" ><%= cl_image_tag @product.photo.key%></li>
+      <li data-imgselect-target = "thumbnail" >
+        <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
+      </li> <%# supposed to be other images when we add more photos %>
+      <li data-imgselect-target = "thumbnail" >
+        <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
+      </li>
+      <li data-imgselect-target = "thumbnail" >
+        <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
+      </li>
+      <li data-imgselect-target = "thumbnail" >
+        <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
+      </li>
+      <li data-imgselect-target = "thumbnail" >
+        <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
+      </li>
     </ul>
   </div>
 
   <%# Main product image %>
   <div class="main-product">
-      <%= cl_image_tag @product.photo.key%>
+      <img class="product-image rounded" src="https://source.unsplash.com/featured/?<%= @product.name %>" alt="<%= @product.name %>">
   </div>
 
   <%#  in-basket / sale/ price /tax details below %>
   <div class="detail-product">
       <p class="in-basket pdt-text">In 20+ baskets </p>
         <p class="sale pdt-text">Sale ends in 11 minutes</p>
-           <h3 class="p-2">SGD<%=@product.price%></h3>
+          <h3 class="p-2">SGD<%=@product.price%></h3>
         <h4 class="product-taxes-text">Local taxes included (where applicable)</h4>
       <p class="pdt-text p-2 mb-2"><%=@product.name%> - <%=@product.description%></p>
       <%# reviews text below %>

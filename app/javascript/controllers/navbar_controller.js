@@ -10,6 +10,11 @@ export default class extends Controller {
   }
 
   showMenu(e) {
+    if (!e.target || !e.target.dataset.id) {
+      console.error("Invalid event target or missing data-id attribute");
+      return;
+    }
+
     const targetId = e.target.dataset.id;
     this.leftMenuTargets.forEach((menu) => {
       // remove active class acorss all left side menus
